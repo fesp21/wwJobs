@@ -76,7 +76,7 @@ class JobsTableViewController: UITableViewController {
     
     func CDSUpdateNotificationSent() {
         self.tableView.reloadData()
-        print(UIApplication.shared.scheduledLocalNotifications!)
+    //    print(UIApplication.shared.scheduledLocalNotifications!)
 
     }
     

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "Jobs.jobByID(String) -&gt; Job?:Jobs.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "list">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CDS.init() -&gt; CDS:CDS.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CDS.(init() -&gt; CDS).(closure #2):CDS.swift">
+      </ContextState>
+      <ContextState
+         contextName = "JobsTableViewController.stateChanged(UISwitch) -&gt; ():JobsTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "API.sharedInstance.indexRowString">
+            </PersistentString>
+            <PersistentString
+               value = "API.sharedInstance.tableViewRowIndexPath">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad() -&gt; ():ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "IssuesListTableViewController.viewDidLoad() -&gt; ():IssuesListTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "API.sharedInstance.getJobsURL()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

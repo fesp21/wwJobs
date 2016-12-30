@@ -80,17 +80,17 @@ class API: NSObject {
     }
     
     func addJobToList(_ job: Job) {
-        jobs.add(job)
+       // jobs.add(job)
     }
     
     func addNewJob(_ job : Job) {
-        jobs.add(job)
+      //  jobs.add(job)
         cds.addNewJob(job)
     }
     
     func setJobDone(_ ID : String) {
         cds.setJobDone(jobs.jobByID(ID)!)
-        jobs.deleteJob(ID)
+      //  jobs.deleteJob(ID)
     }
     
     

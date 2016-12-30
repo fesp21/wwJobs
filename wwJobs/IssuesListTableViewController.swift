@@ -6,30 +6,200 @@
 //  Copyright © 2016 pwilliams. All rights reserved.
 //
 
+
 import UIKit
+import Firebase
 
-class IssuesListTableViewController: UIViewController {
-
+class IssuesListTableViewController: UITableViewController {
+    
+    // MARK: Constants
+    let listToUsers = "ListToUsers"
+    
+    // MARK: Properties
+    var items: [JobItem] = []
+   // var user: User!
+    
+  //  let ref = FIRDatabase.database().reference(withPath: "grocery-items")
+  //  let ref = FIRDatabase.database().reference(withPath: API.sharedInstance.getJobsURL())
+    //moved to viewDidLoad to avoid error - was initialising before logged in.
+    
+    
+    // MARK: UIViewController Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        tableView.allowsMultipleSelectionDuringEditing = false
+        
+        //user = User(uid: "FakeId", email: "hungry@person.food")
+        
+    let ref = FIRDatabase.database().reference(withPath: API.sharedInstance.getJobsPath())
+        
+        ref.queryOrdered(byChild: "completed").observe(.value, with: { snapshot in
+            var newItems: [JobItem] = []
+            for item in snapshot.children {
+                let jobItem = JobItem(snapshot: item as! FIRDataSnapshot)
+                newItems.append(jobItem)
+            }
+            
+            self.items = newItems
+            self.tableView.reloadData()
+        })
+        
+  /*      FIRAuth.auth()!.addStateDidChangeListener { auth, user in
+            guard let user = user else { return }
+            self.user = User(authData: user)
+        } */
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK: UITableView Delegate methods
+    
+    //Todo : Adjust spacing of first row
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }  //tableView NumberofRows
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath)
+        let jobItem = items[indexPath.row]
+        
+        cell.textLabel?.text = jobItem.description
+        cell.detailTextLabel?.text = " -> due by \(jobItem.dueByString())"
+        //cell.detailTextLabel?.text = " -> Due By \(jobItem.dueBy)"
+        toggleCellCheckbox(cell, isInProgress: jobItem.isInProgress)
+        return cell
+    } //tableView CreateRow
+    
+    
+ /*   func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        let more = UITableViewRowAction(style: .normal, title: "job done") { action, index in
+            print("more button tapped")
+        }
+        more.backgroundColor = UIColor.lightGray
+        
+   /*     let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
+            print("favorite button tapped")
+        }
+        favorite.backgroundColor = UIColor.orangeColor()
+        
+        let share = UITableViewRowAction(style: .Normal, title: "Share") { action, index in
+            print("share button tapped")
+        }
+        share.backgroundColor = UIColor.blueColor() */
+        
+        //return [share, favorite, more]
+        return [more]
+    } */
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        //https://www.hackingwithswift.com/example-code/uikit/how-to-customize-swipe-edit-buttons-in-a-uitableview
+        
+        /*    
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
+            // delete item at indexPath
+        } 
+        */
+        
+        let done = UITableViewRowAction(style: .normal, title: "job done") { (action, indexPath) in
+            // job is done, delete from notDone, move to done
+            let jobItem = self.items[indexPath.row]
+            let jobID = jobItem.ID
+            //create new
+            let ref = FIRDatabase.database().reference(withPath: API.sharedInstance.getJobsDonePath())
+            let jobItemRef = ref.child(jobID)
+            jobItemRef.setValue(jobItem.toAnyObject())
+            //delete Old
+            jobItem.ref?.removeValue()
+            
+        }
+        
+        done.backgroundColor = UIColor.green
+        
+        //return [delete, done]
+        return [done]
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+  /*  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
     }
     */
-
+    
+    
+ /*   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let jobItem = items[indexPath.row]
+            jobItem.ref?.removeValue()
+        }
+    } //tableView - delete item
+    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) else { return }
+        let jobItem = items[indexPath.row]
+        let toggledInProgress = !jobItem.isInProgress
+        toggleCellCheckbox(cell, isInProgress: toggledInProgress)
+        jobItem.ref?.updateChildValues([
+            "isInProgress": toggledInProgress
+            ])
+    } //tableview didSelectRow
+    
+    
+    func toggleCellCheckbox(_ cell: UITableViewCell, isInProgress: Bool) {
+        if !isInProgress {
+            cell.accessoryType = .none
+            cell.textLabel?.textColor = UIColor.black
+            cell.detailTextLabel?.textColor = UIColor.black
+        } else {
+            cell.accessoryType = .checkmark
+            cell.textLabel?.textColor = UIColor.gray
+            cell.detailTextLabel?.textColor = UIColor.gray
+        }
+    } //toggleCellCheckbox
+    
+    
+    @IBAction func addButtonDidTouch(_ sender: AnyObject) {
+        let alert = UIAlertController(title: "Issues",
+                                      message: "Add an Issue",
+                                      preferredStyle: .alert)
+        
+        //  https://www.raywenderlich.com/139322/firebase-tutorial-getting-started-2
+        
+        let saveAction = UIAlertAction(title: "Save",
+                                       style: .default) { _ in
+                                        
+                                        guard let textField = alert.textFields?.first,
+                                            let text = textField.text else { return }
+                                        
+                                        let newJobID = UUID().uuidString
+                                        let jobItem = JobItem(ID : newJobID,
+                                                              description: text,
+                                                              doneAt : 0.0,
+                                                              dueBy : 10000.0,
+                                                              isInProgress: false)
+                                        //addedByUser: self.user.email,
+                                        let ref = FIRDatabase.database().reference(withPath: API.sharedInstance.getJobsPath())
+                                        let jobItemRef = ref.child(text.lowercased())
+                                        jobItemRef.setValue(jobItem.toAnyObject())
+        }
+        
+        
+        let cancelAction = UIAlertAction(title: "Cancel",
+                                         style: .default)
+        
+        alert.addTextField()
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
 }

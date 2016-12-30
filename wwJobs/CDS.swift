@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 
 
@@ -75,16 +76,40 @@ class CDS : NSObject {
                     let nc = NotificationCenter.default
                     nc.post(name: Notification.Name(rawValue: "CDSJobAdded"), object: nil)
                     
+                    //New Notifications iOS10
+                    //http://useyourloaf.com/blog/local-notifications-with-ios-10/
+                
+                    let center = UNUserNotificationCenter.current()
+                    let content = UNMutableNotificationContent()
+                    content.title = "Don't forget"
+                    content.body = "Buy some milk"
+                    content.sound = UNNotificationSound.default()
+                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,
+                                                                    repeats: false)
+                    
+                    let identifier = "UYLLocalNotification"
+                    let request = UNNotificationRequest(identifier: identifier,
+                                                        content: content, trigger: trigger)
+                    center.add(request, withCompletionHandler: { (error) in
+                        if error != nil {
+                            // Something went wrong
+                        }
+                    })
+                    
+                    
+                    
+                    
+                    
                     //Show Notification
                     // create a corresponding local notification
-                    let notification = UILocalNotification()
+                /*    let notification = UILocalNotification()
                     notification.alertBody = "New Job Recieved" // text that will be displayed in the notification
                     notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
                     notification.fireDate = Date(timeIntervalSinceNow:5)//item.deadline // todo item due date (when notification will be fired)
                     notification.soundName = UILocalNotificationDefaultSoundName // play default sound
                     notification.userInfo = ["title": description, "UUID": UUID().uuidString] // assign a unique identifier to the notification so that we can retrieve it later
                     
-                    UIApplication.shared.scheduleLocalNotification(notification)
+                    UIApplication.shared.scheduleLocalNotification(notification) */
                     
                     
                 })

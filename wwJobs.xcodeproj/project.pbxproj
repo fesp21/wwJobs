@@ -24,7 +24,6 @@
 		00FA82EB1D3A75FB00E18B9D /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA82EA1D3A75FB00E18B9D /* JobTableViewCell.swift */; };
 		00FA82ED1D3A7AC100E18B9D /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA82EC1D3A7AC100E18B9D /* Job.swift */; };
 		00FA82F21D3A7E0800E18B9D /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA82F01D3A7E0800E18B9D /* JobsTableViewController.swift */; };
-		00FA82F31D3A7E0800E18B9D /* JobsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00FA82F11D3A7E0800E18B9D /* JobsTableViewController.xib */; };
 		04370BCA27062D51B5F0A00C /* Pods_wwJobs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F56102DE8C574B46A2F55 /* Pods_wwJobs.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		00FA82EA1D3A75FB00E18B9D /* JobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
 		00FA82EC1D3A7AC100E18B9D /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		00FA82F01D3A7E0800E18B9D /* JobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
-		00FA82F11D3A7E0800E18B9D /* JobsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobsTableViewController.xib; sourceTree = "<group>"; };
 		290F5CF8C2954D4CCED13C44 /* Pods-wwJobs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wwJobs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wwJobs/Pods-wwJobs.debug.xcconfig"; sourceTree = "<group>"; };
 		485F56102DE8C574B46A2F55 /* Pods_wwJobs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wwJobs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8045049D81C34B7921DA2DEF /* Pods-wwJobs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wwJobs.release.xcconfig"; path = "Pods/Target Support Files/Pods-wwJobs/Pods-wwJobs.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 				00B901F91D3A4BAF00845128 /* Assets.xcassets */,
 				006105971D46604B00874901 /* PLists */,
 				006105961D46601E00874901 /* CustomViews */,
-				00FA82F11D3A7E0800E18B9D /* JobsTableViewController.xib */,
 			);
 			path = wwJobs;
 			sourceTree = "<group>";
@@ -232,7 +229,6 @@
 			files = (
 				00B901FD1D3A4BAF00845128 /* LaunchScreen.storyboard in Resources */,
 				0069BB171D3A6CCA000D670C /* GoogleService-Info.plist in Resources */,
-				00FA82F31D3A7E0800E18B9D /* JobsTableViewController.xib in Resources */,
 				00B901FA1D3A4BAF00845128 /* Assets.xcassets in Resources */,
 				00B901F81D3A4BAF00845128 /* Main.storyboard in Resources */,
 			);

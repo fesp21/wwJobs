@@ -29,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func registerForRemoteNotification() {
+        //http://useyourloaf.com/blog/local-notifications-with-ios-10/
+        
         if #available(iOS 10.0, *) {
             let center  = UNUserNotificationCenter.current()
             center.delegate = self

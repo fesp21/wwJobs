@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>247367274580-28qr42av2rhfqqbvu52593l9iie08emb.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.247367274580-28qr42av2rhfqqbvu52593l9iie08emb</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDG30SNL64VpiPIDM2nLlOVNmUjuVagRVY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>247367274580</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>pwilliams.wwJobs</string>
+	<key>PROJECT_ID</key>
+	<string>wwjobs-8336c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wwjobs-8336c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:247367274580:ios:d11b9c6acd36a67a</string>
+	<key>DATABASE_URL</key>
+	<string>https://wwjobs-8336c.firebaseio.com</string>
+</dict>
+</plist>

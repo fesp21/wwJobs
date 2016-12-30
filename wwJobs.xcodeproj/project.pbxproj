@@ -7,21 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004379B51E023E53003A413B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004379B41E023E53003A413B /* LoginViewController.swift */; };
+		005E6E3C1E11BF3E00CCA53D /* IssuesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E6E3B1E11BF3D00CCA53D /* IssuesListTableViewController.swift */; };
+		006105911D45087D00874901 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006105901D45087C00874901 /* Jobs.swift */; };
+		006105931D450CC000874901 /* CDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006105921D450CC000874901 /* CDS.swift */; };
+		006105991D46609700874901 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006105981D46609700874901 /* LibraryAPI.swift */; };
+		0069BB151D3A65FE000D670C /* checkBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069BB141D3A65FE000D670C /* checkBox.swift */; };
+		0069BB171D3A6CCA000D670C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0069BB161D3A6CCA000D670C /* GoogleService-Info.plist */; };
+		009530521E11ACB700B1F236 /* OnlineUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009530511E11ACB700B1F236 /* OnlineUsersTableViewController.swift */; };
 		00B901F31D3A4BAF00845128 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B901F21D3A4BAF00845128 /* AppDelegate.swift */; };
-		00B901F51D3A4BAF00845128 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B901F41D3A4BAF00845128 /* ViewController.swift */; };
+		00B901F51D3A4BAF00845128 /* JobViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B901F41D3A4BAF00845128 /* JobViewController.swift */; };
 		00B901F81D3A4BAF00845128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B901F61D3A4BAF00845128 /* Main.storyboard */; };
 		00B901FA1D3A4BAF00845128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B901F91D3A4BAF00845128 /* Assets.xcassets */; };
 		00B901FD1D3A4BAF00845128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B901FB1D3A4BAF00845128 /* LaunchScreen.storyboard */; };
+		00D6DE711E11C21A00E948CA /* JobItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6DE701E11C21A00E948CA /* JobItem.swift */; };
+		00FA82EB1D3A75FB00E18B9D /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA82EA1D3A75FB00E18B9D /* JobTableViewCell.swift */; };
+		00FA82ED1D3A7AC100E18B9D /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA82EC1D3A7AC100E18B9D /* Job.swift */; };
+		00FA82F21D3A7E0800E18B9D /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA82F01D3A7E0800E18B9D /* JobsTableViewController.swift */; };
+		00FA82F31D3A7E0800E18B9D /* JobsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00FA82F11D3A7E0800E18B9D /* JobsTableViewController.xib */; };
+		04370BCA27062D51B5F0A00C /* Pods_wwJobs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F56102DE8C574B46A2F55 /* Pods_wwJobs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		004379B41E023E53003A413B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		005E6E3B1E11BF3D00CCA53D /* IssuesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesListTableViewController.swift; sourceTree = "<group>"; };
+		006105901D45087C00874901 /* Jobs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		006105921D450CC000874901 /* CDS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDS.swift; sourceTree = "<group>"; };
+		006105981D46609700874901 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
+		0069BB141D3A65FE000D670C /* checkBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkBox.swift; sourceTree = "<group>"; };
+		0069BB161D3A6CCA000D670C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		009530511E11ACB700B1F236 /* OnlineUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineUsersTableViewController.swift; sourceTree = "<group>"; };
 		00B901EF1D3A4BAF00845128 /* wwJobs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wwJobs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00B901F21D3A4BAF00845128 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00B901F41D3A4BAF00845128 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		00B901F41D3A4BAF00845128 /* JobViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobViewController.swift; sourceTree = "<group>"; };
 		00B901F71D3A4BAF00845128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00B901F91D3A4BAF00845128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00B901FC1D3A4BAF00845128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00B901FE1D3A4BAF00845128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00D6DE701E11C21A00E948CA /* JobItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobItem.swift; sourceTree = "<group>"; };
+		00FA82EA1D3A75FB00E18B9D /* JobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
+		00FA82EC1D3A7AC100E18B9D /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		00FA82F01D3A7E0800E18B9D /* JobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
+		00FA82F11D3A7E0800E18B9D /* JobsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobsTableViewController.xib; sourceTree = "<group>"; };
+		290F5CF8C2954D4CCED13C44 /* Pods-wwJobs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wwJobs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wwJobs/Pods-wwJobs.debug.xcconfig"; sourceTree = "<group>"; };
+		485F56102DE8C574B46A2F55 /* Pods_wwJobs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wwJobs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8045049D81C34B7921DA2DEF /* Pods-wwJobs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wwJobs.release.xcconfig"; path = "Pods/Target Support Files/Pods-wwJobs/Pods-wwJobs.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +59,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04370BCA27062D51B5F0A00C /* Pods_wwJobs.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		005E6E3A1E11AF7500CCA53D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				004379B41E023E53003A413B /* LoginViewController.swift */,
+				009530511E11ACB700B1F236 /* OnlineUsersTableViewController.swift */,
+				00FA82F01D3A7E0800E18B9D /* JobsTableViewController.swift */,
+				00B901F41D3A4BAF00845128 /* JobViewController.swift */,
+				005E6E3B1E11BF3D00CCA53D /* IssuesListTableViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		006105951D465FC500874901 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				006105981D46609700874901 /* LibraryAPI.swift */,
+				006105921D450CC000874901 /* CDS.swift */,
+				00FA82EC1D3A7AC100E18B9D /* Job.swift */,
+				006105901D45087C00874901 /* Jobs.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		006105961D46601E00874901 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				00FA82EA1D3A75FB00E18B9D /* JobTableViewCell.swift */,
+				0069BB141D3A65FE000D670C /* checkBox.swift */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		006105971D46604B00874901 /* PLists */ = {
+			isa = PBXGroup;
+			children = (
+				00B901FE1D3A4BAF00845128 /* Info.plist */,
+				0069BB161D3A6CCA000D670C /* GoogleService-Info.plist */,
+			);
+			name = PLists;
+			sourceTree = "<group>";
+		};
 		00B901E61D3A4BAF00845128 = {
 			isa = PBXGroup;
 			children = (
 				00B901F11D3A4BAF00845128 /* wwJobs */,
 				00B901F01D3A4BAF00845128 /* Products */,
+				0871018C22E29870E77356EA /* Pods */,
+				58BA08E4CD2A4F5561BF4985 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +128,43 @@
 		00B901F11D3A4BAF00845128 /* wwJobs */ = {
 			isa = PBXGroup;
 			children = (
+				00D6DE6F1E11C1FA00E948CA /* Objects */,
 				00B901F21D3A4BAF00845128 /* AppDelegate.swift */,
-				00B901F41D3A4BAF00845128 /* ViewController.swift */,
+				006105951D465FC500874901 /* API */,
+				005E6E3A1E11AF7500CCA53D /* ViewControllers */,
 				00B901F61D3A4BAF00845128 /* Main.storyboard */,
-				00B901F91D3A4BAF00845128 /* Assets.xcassets */,
 				00B901FB1D3A4BAF00845128 /* LaunchScreen.storyboard */,
-				00B901FE1D3A4BAF00845128 /* Info.plist */,
+				00B901F91D3A4BAF00845128 /* Assets.xcassets */,
+				006105971D46604B00874901 /* PLists */,
+				006105961D46601E00874901 /* CustomViews */,
+				00FA82F11D3A7E0800E18B9D /* JobsTableViewController.xib */,
 			);
 			path = wwJobs;
+			sourceTree = "<group>";
+		};
+		00D6DE6F1E11C1FA00E948CA /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				00D6DE701E11C21A00E948CA /* JobItem.swift */,
+			);
+			name = Objects;
+			sourceTree = "<group>";
+		};
+		0871018C22E29870E77356EA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				290F5CF8C2954D4CCED13C44 /* Pods-wwJobs.debug.xcconfig */,
+				8045049D81C34B7921DA2DEF /* Pods-wwJobs.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		58BA08E4CD2A4F5561BF4985 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				485F56102DE8C574B46A2F55 /* Pods_wwJobs.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +174,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00B902011D3A4BAF00845128 /* Build configuration list for PBXNativeTarget "wwJobs" */;
 			buildPhases = (
+				689F43984A9E21C1809F077C /* [CP] Check Pods Manifest.lock */,
 				00B901EB1D3A4BAF00845128 /* Sources */,
 				00B901EC1D3A4BAF00845128 /* Frameworks */,
 				00B901ED1D3A4BAF00845128 /* Resources */,
+				8F4C4B825E6A1DC6787ECEFD /* [CP] Embed Pods Frameworks */,
+				0EE6B8F849E71E56CA73ECF8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -91,11 +197,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = pwilliams;
 				TargetAttributes = {
 					00B901EE1D3A4BAF00845128 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = E8CT95CTF8;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -123,6 +231,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				00B901FD1D3A4BAF00845128 /* LaunchScreen.storyboard in Resources */,
+				0069BB171D3A6CCA000D670C /* GoogleService-Info.plist in Resources */,
+				00FA82F31D3A7E0800E18B9D /* JobsTableViewController.xib in Resources */,
 				00B901FA1D3A4BAF00845128 /* Assets.xcassets in Resources */,
 				00B901F81D3A4BAF00845128 /* Main.storyboard in Resources */,
 			);
@@ -130,13 +240,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0EE6B8F849E71E56CA73ECF8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wwJobs/Pods-wwJobs-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		689F43984A9E21C1809F077C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8F4C4B825E6A1DC6787ECEFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wwJobs/Pods-wwJobs-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		00B901EB1D3A4BAF00845128 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00B901F51D3A4BAF00845128 /* ViewController.swift in Sources */,
+				00B901F51D3A4BAF00845128 /* JobViewController.swift in Sources */,
+				005E6E3C1E11BF3E00CCA53D /* IssuesListTableViewController.swift in Sources */,
+				00D6DE711E11C21A00E948CA /* JobItem.swift in Sources */,
+				0069BB151D3A65FE000D670C /* checkBox.swift in Sources */,
 				00B901F31D3A4BAF00845128 /* AppDelegate.swift in Sources */,
+				006105911D45087D00874901 /* Jobs.swift in Sources */,
+				00FA82EB1D3A75FB00E18B9D /* JobTableViewCell.swift in Sources */,
+				009530521E11ACB700B1F236 /* OnlineUsersTableViewController.swift in Sources */,
+				006105991D46609700874901 /* LibraryAPI.swift in Sources */,
+				00FA82ED1D3A7AC100E18B9D /* Job.swift in Sources */,
+				006105931D450CC000874901 /* CDS.swift in Sources */,
+				004379B51E023E53003A413B /* LoginViewController.swift in Sources */,
+				00FA82F21D3A7E0800E18B9D /* JobsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,8 +345,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -199,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -221,8 +392,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -238,32 +411,45 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		00B902021D3A4BAF00845128 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 290F5CF8C2954D4CCED13C44 /* Pods-wwJobs.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = wwJobs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pwilliams.wwJobs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		00B902031D3A4BAF00845128 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8045049D81C34B7921DA2DEF /* Pods-wwJobs.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = wwJobs/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = pwilliams.wwJobs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -286,6 +472,7 @@
 				00B902031D3A4BAF00845128 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

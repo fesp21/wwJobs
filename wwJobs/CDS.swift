@@ -41,15 +41,16 @@ class CDS : NSObject {
             //not sure what to put here
        // }
         
-        if let user = FIRAuth.auth()?.currentUser {
+     /*   if let user = FIRAuth.auth()?.currentUser {
             userUIDString = user.uid;  // The user's ID, unique to the Firebase project.
             print ("wwJobs: Got userID: \(userUIDString)")
         } else {
             // No user is signed in.
         }
+ */
         
         let myLoginRef = FIRDatabase.database().reference(fromURL: usersURL())
-        print (usersURL())
+//        print (usersURL())
 
         //read data from database
         if let myUserID = FIRAuth.auth()?.currentUser?.uid {
@@ -59,10 +60,9 @@ class CDS : NSObject {
                 self.connectionStatus = "logged in"
                 self.userFamilyUIDString = (snapshot.value! as! NSDictionary)["familyID"] as! String
                 print ("wwJobs: Got familyID: \(self.userFamilyUIDString)")
+    
                 
-                // Create a reference to a Firebase location
-                
-                let myJobsRef = FIRDatabase.database().reference(fromURL: self.jobsURL())
+             /*   let myJobsRef = FIRDatabase.database().reference(fromURL: self.jobsURL())
                 print (self.jobsURL())
                 
                 //Read Job Data
@@ -72,47 +72,13 @@ class CDS : NSObject {
                     let dueBy = (snapshot.value as! NSDictionary)["dueBy"] as! Double
                     let ID = (snapshot.value! as! NSDictionary) ["ID"] as! String
                     let job1 = Job(ID : ID, description: description, dueBy: dueBy)!
+                    
                     API.sharedInstance.addJobToList(job1)
                     let nc = NotificationCenter.default
                     nc.post(name: Notification.Name(rawValue: "CDSJobAdded"), object: nil)
                     
-                    //New Notifications iOS10
-                    //http://useyourloaf.com/blog/local-notifications-with-ios-10/
-                
-                    let center = UNUserNotificationCenter.current()
-                    let content = UNMutableNotificationContent()
-                    content.title = "Don't forget"
-                    content.body = "Buy some milk"
-                    content.sound = UNNotificationSound.default()
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1,
-                                                                    repeats: false)
                     
-                    let identifier = "UYLLocalNotification"
-                    let request = UNNotificationRequest(identifier: identifier,
-                                                        content: content, trigger: trigger)
-                    center.add(request, withCompletionHandler: { (error) in
-                        if error != nil {
-                            // Something went wrong
-                        }
-                    })
-                    
-                    
-                    
-                    
-                    
-                    //Show Notification
-                    // create a corresponding local notification
-                /*    let notification = UILocalNotification()
-                    notification.alertBody = "New Job Recieved" // text that will be displayed in the notification
-                    notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view"
-                    notification.fireDate = Date(timeIntervalSinceNow:5)//item.deadline // todo item due date (when notification will be fired)
-                    notification.soundName = UILocalNotificationDefaultSoundName // play default sound
-                    notification.userInfo = ["title": description, "UUID": UUID().uuidString] // assign a unique identifier to the notification so that we can retrieve it later
-                    
-                    UIApplication.shared.scheduleLocalNotification(notification) */
-                    
-                    
-                })
+                })*/
                 
             }) { (error) in
                 print(error.localizedDescription)
@@ -149,7 +115,7 @@ class CDS : NSObject {
         return myCDSURL+"/jobs/"+userFamilyUIDString+"/"+userUIDString+"/done"
     }
     
-    func setJobDone(_ job : Job) {
+ /*   func setJobDone(_ job : Job) {
         let doneAt = round(Date().timeIntervalSince1970)
         // Write data to Firebase
         let myOldJobsRef = FIRDatabase.database().reference(fromURL: self.oldJobsURL())
@@ -158,9 +124,9 @@ class CDS : NSObject {
         let currentJobsRef = FIRDatabase.database().reference(fromURL: self.jobsURL())
         currentJobsRef.child(job.ID).removeValue()
         
-    }
+    } */
     
-    func addNewJob (_ job : Job) {
+    func addNewJob (_ job : JobItem) {
         let jobsRef = FIRDatabase.database().reference(fromURL: self.jobsURL())
         jobsRef.child(job.ID).setValue(["ID": job.ID, "description": job.description, "dueBy": job.dueBy])
     }

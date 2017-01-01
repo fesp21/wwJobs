@@ -120,6 +120,8 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    print ("wwJobs: in LoginViewController -> viewDidLoad")
+    
     FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
       if user != nil {
         API.sharedInstance.setUserUIDString(newUID: (user?.uid)!)

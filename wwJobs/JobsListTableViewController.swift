@@ -1,5 +1,5 @@
 //
-//  IssuesListTableViewController.swift
+//  JobsListTableViewController.swift
 //  wwJobs
 //
 //  Created by Paul Williams on 26/12/2016.
@@ -11,36 +11,26 @@ import UIKit
 import Firebase
 import UserNotifications
 
-class IssuesListTableViewController: UITableViewController {
+class JobsListTableViewController: UITableViewController {
     
-    // MARK: Constants
     let listToUsers = "ListToUsers"
-    
-    // MARK: Properties
     var items: [JobItem] = []
-   // var user: User!
-    
-  //  let ref = FIRDatabase.database().reference(withPath: "grocery-items")
-  //  let ref = FIRDatabase.database().reference(withPath: API.sharedInstance.getJobsURL())
-    //moved to viewDidLoad to avoid error - was initialising before logged in.
-    
-    
-    // MARK: UIViewController Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.allowsMultipleSelectionDuringEditing = false
         
-        //user = User(uid: "FakeId", email: "hungry@person.food")
-        
         let ref = FIRDatabase.database().reference(withPath: API.sharedInstance.getJobsPath())
         
-        ref.queryOrdered(byChild: "completed").observe(.value, with: { snapshot in
+        ref.queryOrdered(byChild: "isInProgress").observe(.value, with: { snapshot in
+            print("wwJobs: Started Observer for Jobs")
             var newItems: [JobItem] = []
             for item in snapshot.children {
+                
                 let jobItem = JobItem(snapshot: item as! FIRDataSnapshot)
                 let descriptionText = jobItem.description
+                print("wwJobs: Loading Job : \(descriptionText)")
                 newItems.append(jobItem)
                 self.sendNotification(description: descriptionText)
             }
@@ -49,10 +39,6 @@ class IssuesListTableViewController: UITableViewController {
             self.tableView.reloadData()
         })
         
-  /*      FIRAuth.auth()!.addStateDidChangeListener { auth, user in
-            guard let user = user else { return }
-            self.user = User(authData: user)
-        } */
         
     } //ViewDidLoad
     
@@ -71,9 +57,9 @@ class IssuesListTableViewController: UITableViewController {
         // Schedule the notification.
         let center = UNUserNotificationCenter.current()
         center.add(request) { (error) in
-            print(error)
+            print("wwJobs: Error in User Notification : \(error)")
         }
-        print("should have been added")
+        print("wwJobs: Notification should have been added")
     }
     
     
@@ -88,41 +74,15 @@ class IssuesListTableViewController: UITableViewController {
         
         cell.textLabel?.text = jobItem.description
         cell.detailTextLabel?.text = " -> due by \(jobItem.dueByString())"
-        
-        //cell.detailTextLabel?.text = " -> Due By \(jobItem.dueBy)"
         toggleCellCheckbox(cell, isInProgress: jobItem.isInProgress)
         return cell
     } //tableView CreateRow
     
     
- /*   func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        let more = UITableViewRowAction(style: .normal, title: "job done") { action, index in
-            print("more button tapped")
-        }
-        more.backgroundColor = UIColor.lightGray
-        
-   /*     let favorite = UITableViewRowAction(style: .Normal, title: "Favorite") { action, index in
-            print("favorite button tapped")
-        }
-        favorite.backgroundColor = UIColor.orangeColor()
-        
-        let share = UITableViewRowAction(style: .Normal, title: "Share") { action, index in
-            print("share button tapped")
-        }
-        share.backgroundColor = UIColor.blueColor() */
-        
-        //return [share, favorite, more]
-        return [more]
-    } */
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         //https://www.hackingwithswift.com/example-code/uikit/how-to-customize-swipe-edit-buttons-in-a-uitableview
         
-        /*    
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { (action, indexPath) in
-            // delete item at indexPath
-        } 
-        */
         
         let done = UITableViewRowAction(style: .normal, title: "job done") { (action, indexPath) in
             // job is done, delete from notDone, move to done
@@ -141,7 +101,6 @@ class IssuesListTableViewController: UITableViewController {
         //http://uicolor.xyz/#/hex-to-ui
         
         
-        
         //return [delete, done]
         return [done]
     }
@@ -150,20 +109,6 @@ class IssuesListTableViewController: UITableViewController {
         return true
     }
     
-  /*  func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // the cells you would like the actions to appear needs to be editable
-        return true
-    }
-    */
-    
-    
- /*   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let jobItem = items[indexPath.row]
-            jobItem.ref?.removeValue()
-        }
-    } //tableView - delete item
-    */
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) else { return }

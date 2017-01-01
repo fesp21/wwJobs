@@ -10,7 +10,7 @@ import UIKit
 
 class API: NSObject {
     
-    fileprivate let jobs : Jobs
+    //fileprivate let jobs : Jobs
     fileprivate let cds : CDS
     fileprivate let isOnline : Bool
 
@@ -32,7 +32,7 @@ class API: NSObject {
     }
     
     override init() {
-        jobs = Jobs()
+      //  jobs = Jobs()
         cds = CDS()
         isOnline = false
         super.init()
@@ -60,7 +60,7 @@ class API: NSObject {
     }
     
     //- - - - - - - - - - - - - - - - - - - - - - JOBS - - - - - - - - - - - - - - - - - - - - - - //
-    
+  /*
     func getJobs() -> [Job] {
         return jobs.getJobList()
 
@@ -87,11 +87,11 @@ class API: NSObject {
       //  jobs.add(job)
         cds.addNewJob(job)
     }
-    
-    func setJobDone(_ ID : String) {
+    */
+ /*   func setJobDone(_ ID : String) {
         cds.setJobDone(jobs.jobByID(ID)!)
       //  jobs.deleteJob(ID)
-    }
+    } */
     
     
 

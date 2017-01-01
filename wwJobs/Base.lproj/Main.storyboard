@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="595" y="-490"/>
         </scene>
-        <!--My Jobs-->
+        <!--Jobs List Nav Controller-->
         <scene sceneID="Nw3-J8-eEx">
             <objects>
-                <navigationController id="d8r-BN-aAJ" sceneMemberID="viewController">
+                <navigationController id="d8r-BN-aAJ" userLabel="Jobs List Nav Controller" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Jobs" image="Checklist-48" selectedImage="Checklist-48" id="dpV-fa-zrI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="CKo-UY-YWg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -139,10 +139,10 @@
             </objects>
             <point key="canvasLocation" x="-668" y="1207"/>
         </scene>
-        <!--Issues List-->
+        <!--Jobs List-->
         <scene sceneID="jyC-sa-2og">
             <objects>
-                <tableViewController title="JobsViewTableController2" modalPresentationStyle="currentContext" id="WRG-qR-ebT" userLabel="Issues List" customClass="IssuesListTableViewController" customModule="wwJobs" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="JobsViewTableController2" modalPresentationStyle="currentContext" id="WRG-qR-ebT" userLabel="Jobs List" customClass="JobsListTableViewController" customModule="wwJobs" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="rzx-FE-o1H">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -336,10 +336,10 @@
             </objects>
             <point key="canvasLocation" x="-535" y="181"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Job View Nav Controller-->
         <scene sceneID="xFz-Au-EaS">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6ax-ul-sFH" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6ax-ul-sFH" userLabel="Job View Nav Controller" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kwl-Jz-Qzs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		004379B51E023E53003A413B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004379B41E023E53003A413B /* LoginViewController.swift */; };
-		005E6E3C1E11BF3E00CCA53D /* IssuesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E6E3B1E11BF3D00CCA53D /* IssuesListTableViewController.swift */; };
-		006105911D45087D00874901 /* Jobs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006105901D45087C00874901 /* Jobs.swift */; };
+		005E6E3C1E11BF3E00CCA53D /* JobsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005E6E3B1E11BF3D00CCA53D /* JobsListTableViewController.swift */; };
 		006105931D450CC000874901 /* CDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006105921D450CC000874901 /* CDS.swift */; };
 		006105991D46609700874901 /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006105981D46609700874901 /* LibraryAPI.swift */; };
 		0069BB151D3A65FE000D670C /* checkBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0069BB141D3A65FE000D670C /* checkBox.swift */; };
@@ -22,15 +21,12 @@
 		00B901FD1D3A4BAF00845128 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B901FB1D3A4BAF00845128 /* LaunchScreen.storyboard */; };
 		00D6DE711E11C21A00E948CA /* JobItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D6DE701E11C21A00E948CA /* JobItem.swift */; };
 		00FA82EB1D3A75FB00E18B9D /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA82EA1D3A75FB00E18B9D /* JobTableViewCell.swift */; };
-		00FA82ED1D3A7AC100E18B9D /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA82EC1D3A7AC100E18B9D /* Job.swift */; };
-		00FA82F21D3A7E0800E18B9D /* JobsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA82F01D3A7E0800E18B9D /* JobsTableViewController.swift */; };
 		04370BCA27062D51B5F0A00C /* Pods_wwJobs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F56102DE8C574B46A2F55 /* Pods_wwJobs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		004379B41E023E53003A413B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		005E6E3B1E11BF3D00CCA53D /* IssuesListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesListTableViewController.swift; sourceTree = "<group>"; };
-		006105901D45087C00874901 /* Jobs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jobs.swift; sourceTree = "<group>"; };
+		005E6E3B1E11BF3D00CCA53D /* JobsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsListTableViewController.swift; sourceTree = "<group>"; };
 		006105921D450CC000874901 /* CDS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CDS.swift; sourceTree = "<group>"; };
 		006105981D46609700874901 /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
 		0069BB141D3A65FE000D670C /* checkBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = checkBox.swift; sourceTree = "<group>"; };
@@ -45,8 +41,6 @@
 		00B901FE1D3A4BAF00845128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00D6DE701E11C21A00E948CA /* JobItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobItem.swift; sourceTree = "<group>"; };
 		00FA82EA1D3A75FB00E18B9D /* JobTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
-		00FA82EC1D3A7AC100E18B9D /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
-		00FA82F01D3A7E0800E18B9D /* JobsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobsTableViewController.swift; sourceTree = "<group>"; };
 		290F5CF8C2954D4CCED13C44 /* Pods-wwJobs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wwJobs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wwJobs/Pods-wwJobs.debug.xcconfig"; sourceTree = "<group>"; };
 		485F56102DE8C574B46A2F55 /* Pods_wwJobs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wwJobs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8045049D81C34B7921DA2DEF /* Pods-wwJobs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wwJobs.release.xcconfig"; path = "Pods/Target Support Files/Pods-wwJobs/Pods-wwJobs.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,9 +63,8 @@
 			children = (
 				004379B41E023E53003A413B /* LoginViewController.swift */,
 				009530511E11ACB700B1F236 /* OnlineUsersTableViewController.swift */,
-				00FA82F01D3A7E0800E18B9D /* JobsTableViewController.swift */,
 				00B901F41D3A4BAF00845128 /* JobViewController.swift */,
-				005E6E3B1E11BF3D00CCA53D /* IssuesListTableViewController.swift */,
+				005E6E3B1E11BF3D00CCA53D /* JobsListTableViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -81,8 +74,6 @@
 			children = (
 				006105981D46609700874901 /* LibraryAPI.swift */,
 				006105921D450CC000874901 /* CDS.swift */,
-				00FA82EC1D3A7AC100E18B9D /* Job.swift */,
-				006105901D45087C00874901 /* Jobs.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -290,18 +281,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				00B901F51D3A4BAF00845128 /* JobViewController.swift in Sources */,
-				005E6E3C1E11BF3E00CCA53D /* IssuesListTableViewController.swift in Sources */,
+				005E6E3C1E11BF3E00CCA53D /* JobsListTableViewController.swift in Sources */,
 				00D6DE711E11C21A00E948CA /* JobItem.swift in Sources */,
 				0069BB151D3A65FE000D670C /* checkBox.swift in Sources */,
 				00B901F31D3A4BAF00845128 /* AppDelegate.swift in Sources */,
-				006105911D45087D00874901 /* Jobs.swift in Sources */,
 				00FA82EB1D3A75FB00E18B9D /* JobTableViewCell.swift in Sources */,
 				009530521E11ACB700B1F236 /* OnlineUsersTableViewController.swift in Sources */,
 				006105991D46609700874901 /* LibraryAPI.swift in Sources */,
-				00FA82ED1D3A7AC100E18B9D /* Job.swift in Sources */,
 				006105931D450CC000874901 /* CDS.swift in Sources */,
 				004379B51E023E53003A413B /* LoginViewController.swift in Sources */,
-				00FA82F21D3A7E0800E18B9D /* JobsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

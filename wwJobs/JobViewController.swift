@@ -36,8 +36,13 @@ class JobViewController: UIViewController, UITextViewDelegate {
     @IBAction func createNewJob() {
         let uuid = UUID().uuidString
         let newDueBy = round(datePicker.date.timeIntervalSince1970)
-        let job1 = Job(ID : uuid, description: textView.text, dueBy: newDueBy)!
-        API.sharedInstance.addNewJob(job1)
+        let job1 = JobItem(ID : uuid, description: textView.text, doneAt : 0.0, dueBy: newDueBy, isInProgress : false)
+        
+       // API.sharedInstance.addNewJob(job1)
+        
+        let ref = FIRDatabase.database().reference(withPath: API.sharedInstance.getJobsPath())
+        let jobItemRef = ref.child(uuid)
+        jobItemRef.setValue(job1.toAnyObject())
         
         let nc = NotificationCenter.default
         nc.post(name: Notification.Name(rawValue: "CDSJobAdded"), object: nil)

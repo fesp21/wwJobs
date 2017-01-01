@@ -58,7 +58,11 @@ struct JobItem {
         } else {
             doneAt = 0
         }
-        isInProgress = snapshotValue["isInProgress"] as! Bool
+        if snapshotValue["isInProgress"] != nil {
+            isInProgress = snapshotValue["isInProgress"] as! Bool
+        } else {
+            isInProgress = false
+        }
 
         ref = snapshot.ref
     }

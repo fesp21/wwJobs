@@ -9,14 +9,17 @@
 import UIKit
 import Firebase
 
-class JobViewController: UIViewController {
+class JobViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var datePicker: UIDatePicker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        textView.delegate = self
+        textView.text = "Describe the job..."
+        textView.textColor = UIColor.lightGray
         
 
     }
@@ -43,7 +46,21 @@ class JobViewController: UIViewController {
     }
     
 
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
     
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Describe the job..."
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+
 
 
 }

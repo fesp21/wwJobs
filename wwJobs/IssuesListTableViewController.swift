@@ -9,6 +9,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 class IssuesListTableViewController: UITableViewController {
     
@@ -33,13 +34,15 @@ class IssuesListTableViewController: UITableViewController {
         
         //user = User(uid: "FakeId", email: "hungry@person.food")
         
-    let ref = FIRDatabase.database().reference(withPath: API.sharedInstance.getJobsPath())
+        let ref = FIRDatabase.database().reference(withPath: API.sharedInstance.getJobsPath())
         
         ref.queryOrdered(byChild: "completed").observe(.value, with: { snapshot in
             var newItems: [JobItem] = []
             for item in snapshot.children {
                 let jobItem = JobItem(snapshot: item as! FIRDataSnapshot)
+                let descriptionText = jobItem.description
                 newItems.append(jobItem)
+                self.sendNotification(description: descriptionText)
             }
             
             self.items = newItems
@@ -51,11 +54,28 @@ class IssuesListTableViewController: UITableViewController {
             self.user = User(authData: user)
         } */
         
+    } //ViewDidLoad
+    
+    
+    func sendNotification(description : String) {
+        let content = UNMutableNotificationContent()
+        
+        content.title = "New Job Recieved"
+        content.body = description
+        content.sound = UNNotificationSound.default()
+        
+        // Deliver the notification in five seconds.
+        let trigger = UNTimeIntervalNotificationTrigger.init(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest.init(identifier: "FiveSecond", content: content, trigger: trigger)
+        
+        // Schedule the notification.
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error) in
+            print(error)
+        }
+        print("should have been added")
     }
     
-    // MARK: UITableView Delegate methods
-    
-    //Todo : Adjust spacing of first row
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -68,6 +88,7 @@ class IssuesListTableViewController: UITableViewController {
         
         cell.textLabel?.text = jobItem.description
         cell.detailTextLabel?.text = " -> due by \(jobItem.dueByString())"
+        
         //cell.detailTextLabel?.text = " -> Due By \(jobItem.dueBy)"
         toggleCellCheckbox(cell, isInProgress: jobItem.isInProgress)
         return cell
@@ -116,7 +137,10 @@ class IssuesListTableViewController: UITableViewController {
             
         }
         
-        done.backgroundColor = UIColor.green
+        done.backgroundColor = UIColor(red:0.20, green:0.40, blue:0.20, alpha:1.0)
+        //http://uicolor.xyz/#/hex-to-ui
+        
+        
         
         //return [delete, done]
         return [done]
@@ -155,12 +179,12 @@ class IssuesListTableViewController: UITableViewController {
     func toggleCellCheckbox(_ cell: UITableViewCell, isInProgress: Bool) {
         if !isInProgress {
             cell.accessoryType = .none
-            cell.textLabel?.textColor = UIColor.black
-            cell.detailTextLabel?.textColor = UIColor.black
-        } else {
-            cell.accessoryType = .checkmark
             cell.textLabel?.textColor = UIColor.gray
             cell.detailTextLabel?.textColor = UIColor.gray
+        } else {
+            cell.accessoryType = .checkmark
+            cell.textLabel?.textColor = UIColor(red:0.20, green:0.40, blue:0.20, alpha:1.0)
+            cell.detailTextLabel?.textColor = UIColor.black
         }
     } //toggleCellCheckbox
     
@@ -199,6 +223,16 @@ class IssuesListTableViewController: UITableViewController {
         alert.addAction(cancelAction)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func logOutButtonPressed(_ sender: AnyObject) {
+        do{
+            try FIRAuth.auth()?.signOut()
+            dismiss(animated: true, completion: nil)
+        }catch{
+            print("wwJobs: Error while signing out!")
+        }
+        
     }
     
     

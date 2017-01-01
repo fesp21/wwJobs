@@ -36,7 +36,36 @@ class LoginViewController: UIViewController {
 
   @IBAction func loginDidTouch(_ sender: AnyObject) {
     FIRAuth.auth()!.signIn(withEmail: textFieldLoginEmail.text!,
-                           password: textFieldLoginPassword.text!)
+                           password: textFieldLoginPassword.text!,
+                           completion: { (user, error) in
+                            
+                            if error == nil{
+                                
+                                print("wwJobs: logIn succesfull")
+                                
+                            }else{
+                                
+                                let typeError = FIRAuthErrorCode(rawValue: error!._code)!
+                                switch typeError {
+                                case .errorCodeUserNotFound:
+                                    print("wwJobs: user not found")
+                                    let alert = UIAlertController(title: "Login Failed", message: "user not found", preferredStyle: UIAlertControllerStyle.alert)
+                                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                case .errorCodeWrongPassword:
+                                    print("wwJobs: wrong password")
+                                    let alert = UIAlertController(title: "Login Failed", message: "wrong password", preferredStyle: UIAlertControllerStyle.alert)
+                                    alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+                                    self.present(alert, animated: true, completion: nil)
+                                default:
+                                    break
+                                    
+                                }
+                            }
+    })
+    
+    
+    
     
     //temporary to allow login offline
     //self.performSegue(withIdentifier: self.loginToList, sender: nil)
@@ -90,14 +119,18 @@ class LoginViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
       if user != nil {
         API.sharedInstance.setUserUIDString(newUID: (user?.uid)!)
         API.sharedInstance.setUserEmailString(newEmail: (user?.email)!)
+        print("wwJobs: user Email is \(user?.email)")
         self.performSegue(withIdentifier: self.loginToTBCSegue, sender: nil)
-      }
+        }
     }
-  }
+  } //viewDidLoad
+    
+    
   
 }
 
